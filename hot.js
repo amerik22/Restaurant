@@ -64,7 +64,7 @@ app.post("/api/waitlist", function(req, res) {
 
   console.log(newWtable);
 
-  wtable.push(newWtable);
+  wtables.push(newWtable);
 
   res.json(newWtable);
 });
