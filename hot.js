@@ -48,7 +48,7 @@ app.post("/api/tables", function(req, res) {
 
   console.log(newtable);
 
-  table.push(newtable);
+  tables.push(newtable);
 
   res.json(newtable);
 });
