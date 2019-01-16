@@ -92,9 +92,10 @@
             uniqueID: $("#reserve_uniqueID").val().trim(),
         };
 
-        $.post("/tables", newReservation)
+        $.post("/api/tables", newReservation)
         .then(function(data) {
-           
+          console.log(data);
+          alert("Adding reservation");
         });
 
         $("#reserve_name").val("")
