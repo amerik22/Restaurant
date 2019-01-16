@@ -8,19 +8,19 @@ var PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var tables = {
+var tables = [{
     name: "",
     number: "",
     email: "",
     id: ""
-};
+}];
 
-var wtables = {
+var wtables = [{
     name: "",
     number: "",
     email: "",
     id: ""
-};
+}];
 
 // Home
 app.get("/", function(req, res){
@@ -42,7 +42,7 @@ app.get("/api/tables", function(req, res){
     return res.json(tables);
 });
 
-app.post("/api/characters", function(req, res) {
+app.post("/api/tables", function(req, res) {
     var newtable = req.body;
     newtable.routeName = newtable.name.replace(/\s+/g, "").toLowerCase();
 
