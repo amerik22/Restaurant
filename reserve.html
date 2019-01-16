@@ -9,6 +9,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery.js"></script>
 
 
     <title>Document</title>
@@ -81,6 +82,28 @@
             </p></div>
           </footer>
     </div>
+    <script type="text/javascript">
+    $(".submit").on("click" , function(){
+
+        var newReservation = {
+            name: $("#reserve_name").val().trim(),
+            phoneNumber: $("#reserve_phone").val().trim(),
+            email: $("#reserve_email").val().trim(),
+            uniqueID: $("#reserve_uniqueID").val().trim(),
+        };
+
+        $.post("/tables", newReservation)
+        .then(function(data) {
+           
+        });
+
+        $("#reserve_name").val("")
+        $("#reserve_phone").val("")
+        $("#reserve_email").val("")
+        $("#reserve_uniqueID").val("")
+
+    })
+    </script>
 </body>
 
 </html>
